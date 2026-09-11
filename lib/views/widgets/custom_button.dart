@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:notes_app/constsants.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onTap});
+  const CustomButton({super.key, this.onTap,  this.isLoadig=false});
   final void Function()? onTap;
+  final bool isLoadig ;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,12 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: Center(
-          child: Text('Add', style: TextStyle(color: Colors.black, fontSize: 20)),
+          child:isLoadig ? const CircularProgressIndicator(
+            color: Colors.black,
+          ) :const Text(
+            'Add',
+            style: TextStyle(color: Colors.black, fontSize: 20),
+          ),
         ),
       ),
     );
