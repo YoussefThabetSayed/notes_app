@@ -24,7 +24,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
       autovalidateMode: autoValidateMode,
       child: Column(
         children: [
-          SizedBox(height: 36),
+          SizedBox(height: 24),
           CustomTextFiled(
             hint: 'Title',
             onSaved: (value) {
@@ -39,7 +39,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subTitle = value;
             },
           ),
-          SizedBox(height: 90),
+          SizedBox(height: 50),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
